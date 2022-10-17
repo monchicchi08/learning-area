@@ -69,8 +69,6 @@
       <input type="submit" value="予想を投稿" class="guessSubmit">
         
       function checkGuess() {
-        guessSubmit.addEventListener('click', checkGuess);
-
         let userGuess = Number(guessField.value);
         if (guessCount === 1) {
           guesses.textContent = '前回の予想: ';
@@ -100,6 +98,8 @@
         guessField.focus();
       }
       
+      guessSubmit.addEventListener('click', checkGuess);
+      
       function setGameOver() {
         guessField.disabled = true;
         guessSubmit.disabled = true;
@@ -128,7 +128,7 @@
 
         randomNumber = Math.floor(Math.random() * 100) + 1;
       }
-
+     
 
     </script>
   </body>
